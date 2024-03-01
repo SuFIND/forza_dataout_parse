@@ -1,0 +1,21 @@
+[package]
+name = "forza_dataout_parse"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dimon Su syq.dev@outlook.com"]
+license = "MIT"
+keywords = ["ForzaMotorsport", "UDP"]
+description = "This package will help you parse Forza Motorsport `data out` upd packet."
+homepage = "https://github.com/SuFIND/forza_dataout_parse"
+repository = "https://github.com/SuFIND/forza_dataout_parse"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
