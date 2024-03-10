@@ -1,8 +1,10 @@
 use crate::utils;
 use std::io::Cursor;
+use serde::{Serialize, Deserialize};
+use serde_json;
 
 /// dash datagram
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Datagram {
     /// = 1 when race is on. = 0 when in menus/race stopped<br />
     /// 在菜单中是0，比赛中是1
@@ -172,6 +174,8 @@ impl Datagram {
     pub fn get_speed_by_mph(&self) -> f32 {
         self.speed * 2.2369
     }
+
+    pub fn to_json(&self) -> String { serde_json::to_string(&self).unwrap() }
     
 }
 

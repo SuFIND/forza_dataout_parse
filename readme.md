@@ -2,16 +2,26 @@
 This is a rust library specifically designed for parsing Forza DataOut output messages, currently supporting parsing of messages from the Forza MotorSport Dash.
 
 ## Install
+### Edit Cargo.toml
 1. edit your `Cargo.toml`
 2. add `forza_dataout_parse` follow `[dependencies]`. like:
    ```toml
    [dependencies]
-   // ...
+   # ...
    forza_dataout_parse = "x"
    ```
+3. exec shell
+   ```shell
+   cargo update
+   ```
+### OR Use shell command
+```shell
+cd /your/project/path
+cargo add forza_dataout_parse
+```
 
 ## How to use
-This is a simple demo to listen UPD.
+This is a simple demo to listen ForzaMotorsport UPD.
 ```rust
 use std::net::UdpSocket;
 use std::thread;
@@ -47,3 +57,7 @@ fn main() {
     }
 }
 ```
+
+## feature map
+- [X] 😄support to_json() and serialization power by serde @0.1.1
+- [x] 👌basic parse for dash datagram @0.1.0
